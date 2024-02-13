@@ -1,0 +1,9 @@
+<ul>
+    <li><a href="/carts">Ver todos los carritos</a></li>
+</ul>
+
+<ul>
+    {{#each carts}}
+        <li><a href="/carts/{{this._id}}">{{this.products}}</a></li>
+    {{/each}}
+</ul>
