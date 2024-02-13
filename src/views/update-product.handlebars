@@ -1,8 +1,9 @@
-<form action="/products/update/" method="post" enctype="multipart/form-data">
+<form action="/products/update" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="{{id}}">
     <input type="text" name="title" placeholder="Titulo del producto" value="{{title}}">
     <textarea name="description" placeholder="Descripción del producto">{{description}}</textarea>
     <input type="text" name="price" placeholder="Precio del producto" value="{{price}}">
     <input type="text" name="stock" placeholder="Stock del producto" value="{{stock}}">
+    <input type="file" name="image" />
     <input type="submit" value="Actualizar producto" />
 </form>

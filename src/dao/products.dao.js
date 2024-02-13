@@ -34,7 +34,8 @@ class ProductsDAO {
         }
     }
 
-    static async update(id, data) {        
+    static async update(id, data) {   
+        
         try {
             return Products.findOneAndUpdate({ _id: id }, data);
         } catch (error) {

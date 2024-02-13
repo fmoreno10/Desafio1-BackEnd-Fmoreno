@@ -104,15 +104,14 @@ router.post("/", upload.single('image'), async (req, res) => {
 })
 
 // POST : Modifica el producto con el ID especificado
-router.post('/update/', async (req, res) => {
+router.post('/update', upload.single('image'), async (req, res) => {
         
-    //const productID = req.params.id;
+    let filename = req.file.filename;
     let updatedProductBody = req.body;
     const productID = updatedProductBody.id;
-    console.log("productID: " + productID);
     
     try {
-        const updatedProduct = await ProductsDAO.update(productID, updatedProductBody);        
+        const updatedProduct = await ProductsDAO.update(productID, {photo: filename, ...updatedProductBody});        
         res.render("product",updatedProduct);
     } catch (error) {
         console.log(error);
